@@ -37,7 +37,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Transaction History</title>
-    <link rel="stylesheet" href="transaction.css" />
+    <link rel="stylesheet" href="css/transaction.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
@@ -102,6 +102,6 @@ $result = $conn->query($sql);
     </div>
 </div>
 
-<script src="transaction.js"></script>
+<script src="scripts/transaction.js"></script>
 </body>
 </html>

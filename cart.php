@@ -38,7 +38,7 @@ while ($row = $result->fetch_assoc()) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manga Cart</title>
-    <link rel="stylesheet" href="cart.css" />
+    <link rel="stylesheet" href="css/cart.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -105,6 +105,6 @@ while ($row = $result->fetch_assoc()) {
   </div>
 </div>
 
-<script src="cart.js"></script>
+<script src="scripts/cart.js"></script>
 </body>
 </html>
