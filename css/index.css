@@ -1,609 +1,511 @@
+/* ------------------------------
+   GLOBAL RESET
+--------------------------------*/
 * {
   margin: 0;
   padding: 0;
-  /* outline: 2px solid red; */
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  font-family: "JetBrains Mono", "Poppins", Arial, sans-serif;
 }
 
 body {
-  width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #14110d;
+  color: #fff;
 }
 
-section {
-  height: 100vh;
-  width: 100vw;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-/* Navigation */
-.navigation-container {
-  display: flex;
-  width: 100vw;
-  height: 10vh;
-  background-color: transparent;
-  justify-content: center;
-  align-items: center;
+/* ------------------------------
+   NAVIGATION
+--------------------------------*/
+.nav-container {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
 }
 
 .nav-bar {
-  width: 100%;
   display: flex;
-  gap: 50px;
+  justify-content: space-between;
   align-items: center;
-  /* justify-content: center; */
-  padding-right: 25px;
-  padding-left: 25px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  position: fixed;
-  background-color: #ffffff;
-}
-
-.nav-bar a {
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  text-decoration: none;
-  color: #e4541e;
-  font-weight: bold;
+  padding: 12px 30px;
+  background-color: #14110d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  flex-wrap: wrap;
 }
 
 .navigation-links {
   display: flex;
+  gap: 35px;
   flex: 1;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.navigation-links a {
+  text-decoration: none;
+  color: #e4541e;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.navigation-links a:hover {
+  color: #ff7a42;
 }
 
 .user-links {
   display: flex;
-  flex: 1;
-  justify-content: flex-end;
   align-items: center;
-  padding-right: 80px;
-  flex-direction: row;
   gap: 20px;
 }
 
 .user-div {
   display: flex;
-  /* gap: 10px; */
-  height: 100%;
-  justify-content: center;
   align-items: center;
+  gap: 8px;
 }
 
 .user-links i {
+  font-size: 18px;
   color: #e4541e;
+  transition: 0.3s ease;
+}
+
+.user-links i:hover {
+  color: #ff7a42;
 }
 
 .user-links p {
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  padding-left: 10px;
   font-weight: bold;
+  color: #e4541e;
 }
 
-/* Hero Section */
+/* Mobile Menu */
+.menu-btn {
+  display: none;
+  font-size: 25px;
+  cursor: pointer;
+  color: #e4541e;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background-color: #14110d;
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.mobile-nav.show {
+  display: flex;
+}
+
+/* ------------------------------
+   HERO SECTION
+--------------------------------*/
 #hero-section {
-  background-image: url("src/images/aot_wallpaper.jpg");
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../src/images/aot_wallpaper.jpg");
   background-size: cover;
   background-position: center;
-  /* border-bottom: 2px solid #ffffff; */
+  text-align: center;
+  padding: 100px 20px 50px;
 }
 
 .hero-main-div {
-  height: 100%;
-  width: 100%;
   display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 30px;
 }
 
 .hero-left-div {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding-left: 50px;
-  text-align: left;
-  justify-content: center;
+  text-align: center;
 }
 
 .hero-left-div h1 {
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  font-size: 7rem;
-  color: #ffffff;
+  font-size: 3rem;
+  color: #fff;
 }
 
 .hero-left-div h2 {
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  font-size: 2rem;
+  display: inline-block;
+  font-size: 1.5rem;
   background-color: #ffd28b;
-  color: #000000;
-  /* margin-top: 20px; */
-  width: fit-content;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-left: 10px solid #65553c;
+  color: #000;
+  padding: 5px 10px;
+  margin: 10px 0;
+  border-left: 5px solid #65553c;
 }
 
 .hero-left-div h3 {
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  font-size: 1.5rem;
+  display: inline-block;
+  font-size: 1.2rem;
   background-color: #e41e1e;
-  color: #ffffff;
-  margin-top: 20px;
-  width: fit-content;
-  padding-left: 10px;
-  padding-right: 10px;
+  color: #fff;
+  padding: 5px 10px;
 }
 
 .hero-left-div p {
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  color: #ffffff;
-  margin-top: 20px;
-  line-height: 1.3;
+  color: #fff;
   opacity: 0.8;
+  line-height: 1.4;
+  margin-top: 10px;
 }
 
 .hero-right-div {
   display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .hero-right-div img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 70%;
-  box-shadow: 5px 5px 5px #000000a3;
+  width: 100%;
+  max-width: 400px;
   border: 2px solid #e4541e;
+  box-shadow: 5px 5px 15px #000000a3;
+  transition: transform 0.3s ease;
 }
 
 .hero-right-div img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .hero-manga-button-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .hero-manga-button-container button {
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  width: 50%;
-  height: 50px;
-  margin-top: 20px;
-  font-size: 1.3rem;
-  font-weight: bolder;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 #add-to-cart-button {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: #14110d;
-  color: #ffffff;
-  border: 2px solid #ffffff;
+  color: #fff;
+  border: 2px solid #fff;
 }
 
 #add-to-cart-button:hover {
-  transform: scale(1.2);
-  cursor: pointer;
+  transform: scale(1.1);
 }
 
 #buy-now-button {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: #ffd28b;
   color: #14110d;
-  border: 2px solid #ffffff;
+  border: 2px solid #fff;
 }
 
 #buy-now-button:hover {
-  transform: scale(1.2);
-  cursor: pointer;
+  transform: scale(1.1);
 }
 
-/* Store Section */
+/* ------------------------------
+   STORE SECTION
+--------------------------------*/
 #store-section {
-  background-color: #14110d;
-  height: 400vh;
-  border-bottom: 2px solid #ffffff;
-}
-
-.store-main-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  /* height: 100%; */
-  width: 100%;
+  padding: 50px 20px;
 }
 
 .store-header-div {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 10%;
-  width: 80%;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .store-header-div img {
-  height: 50%;
-}
-
-.store-header-div h1 {
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  font-size: 3rem;
-  color: white;
-  margin-top: 20px;
-}
-
-.popular-mangas-div {
-  display: flex;
-  width: 80%;
-  height: 40%;
-}
-
-.popular-mangas-div h1 {
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  color: #ffffff;
+  height: 50px;
 }
 
 .daily-mangas-div {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 50%;
-  margin-top: 50px;
-}
-
-.daily-mangas-div h1 {
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  color: #ffffff;
+  margin-top: 40px;
 }
 
 .daily-mangas-header h1 {
   font-size: 2rem;
-  padding-left: 20px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .daily-mangas-products {
   display: flex;
-  margin-top: 20px;
-  height: 100%;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 20px;
 }
 
 .manga-container {
-  height: fit-content;
-  width: 20%;
+  background-color: #1a1a1a;
+  padding: 10px;
+  border-radius: 10px;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.manga-container:hover {
+  transform: translateY(-5px);
 }
 
 .manga-container img {
-  width: 100%;
-  border: 2px solid #ffffff;
+  border: 2px solid #fff;
+  border-radius: 5px;
 }
 
 .manga-container h1 {
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  color: #ffffff;
-  margin-top: 20px;
   font-size: 1.2rem;
+  margin-top: 10px;
 }
 
 .manga-container h3 {
-  margin-top: 10px;
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
-  color: yellow;
+  color: #ffd700;
+  font-size: 0.9rem;
 }
 
 .manga-container p {
-  margin-top: 10px;
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  color: #ffffff;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   opacity: 0.8;
 }
 
-/* Founders Section */
+/* ------------------------------
+   FOUNDERS SECTION
+--------------------------------*/
 #founders-section {
-  background-color: #14110d;
+  padding: 50px 20px;
 }
 
 .founders-main-div {
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  display: flex;
-  height: 100%;
-  width: 100%;
-}
-
-.famadico-div {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  justify-items: center;
   align-items: center;
 }
 
-.famadico-div h1 {
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-.famadico-div p {
-  color: #ffffff;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 20px;
-  text-align: center;
-  opacity: 0.7;
-}
-
-.famadico-div img {
-  width: 75%;
+.founders-main-div img {
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  border: 5px solid #ffffff;
+  border: 4px solid #fff;
+  object-fit: cover;
 }
 
-.baybayan-div {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  background-color: #14110d;
-  justify-content: center;
-  align-items: center;
+.founders-main-div h1 {
+  margin-top: 15px;
 }
 
-.baybayan-div h1 {
-  color: #ffffff;
-  margin-top: 20px;
-}
-
-.baybayan-div p {
-  color: #ffffff;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-bottom: 20px;
+.founders-main-div p {
   text-align: center;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
-.baybayan-div img {
-  width: 75%;
-  border-radius: 50%;
-  border: 5px solid #ffffff;
-}
-
-.dancel-div {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-}
-
-.dancel-div h1 {
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-.dancel-div p {
-  color: #ffffff;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 20px;
-  text-align: center;
-  opacity: 0.7;
-}
-
-.dancel-div img {
-  width: 75%;
-  border-radius: 50%;
-  border: 5px solid #ffffff;
-}
-
+.famadico-div,
+.baybayan-div,
+.dancel-div,
 .rone-div {
   display: flex;
+  text-align: center;
   flex-direction: column;
-  flex: 1;
-  background-color: #14110d;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
-.rone-div h1 {
-  color: #ffffff;
-  margin-top: 20px;
-}
 
-.rone-div p {
-  color: #ffffff;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  opacity: 0.7;
-}
-
-.rone-div img {
-  width: 75%;
-  border-radius: 50%;
-  border: 5px solid #ffffff;
-}
-/* About Section */
+/* ------------------------------
+   ABOUT SECTION
+--------------------------------*/
 #about-section {
-  background-color: #14110d;
-  border-bottom: 2px solid #ffffff;
-}
-
-.main-about-div {
+  padding: 50px 20px;
   display: flex;
-  height: 100%;
-  width: 100%;
-}
-
-.about-left-div {
-  display: flex;
-  text-align: right;
-  flex: 1;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .about-left-div-header h1 {
-  font-size: 4rem;
-  margin-right: 25px;
-  margin-top: 25px;
-  color: #ffffff;
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
 }
 
 .about-left-div-header p {
-  opacity: 0.7;
-  margin-right: 25px;
-  margin-top: 25px;
-  color: #ffffff;
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
+  opacity: 0.8;
+  margin-top: 10px;
 }
 
-.about-right-div {
-  display: flex;
-  flex: 2;
-  background-image: url("src/images/about_background_image.jpg");
-}
-
-/* Contacts Section */
+/* ------------------------------
+   CONTACT SECTION
+--------------------------------*/
 #contact-section {
-  height: 150vh;
-  background-color: #14110d;
+  padding: 50px 20px;
+  background-image: url("../src/images/contact_background_image.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .main-contact-div {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
+  gap: 40px;
 }
 
 .contact-top-div {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  flex: 1;
-  border-bottom: 3px solid #ffd972;
-}
-
-.contact-header-div {
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  display: flex;
   text-align: center;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  color: #ffffff;
-  background-image: url("src/images/contact_background_image.png");
 }
 
-.contact-header-div h1 {
-  font-size: 4rem;
-}
-
-.contact-header-div p {
-  opacity: 70%;
-  margin-top: 25px;
-  padding-left: 50px;
-  padding-right: 50px;
+.contact-top-div h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .contact-header-div-description {
-  width: 50%;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+.contact-header-div h3 {
+  margin-bottom: 20px;
 }
 
 .contact-bottom-div {
-  display: flex;
-  flex: 1;
-  background-color: #222d32;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: start;
 }
 
-.contact-bottom-div {
-  display: flex;
+.contact-bottom-div h1 {
+  margin-top: 10px;
+}
+
+.contact-bottom-div p {
+  opacity: 0.8;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 .contact-first-container {
   display: flex;
-  flex-direction: column;
-  flex: 1;
-  color: #ffffff;
-  font-size: 2.5rem;
+  text-align: center;
   justify-content: center;
   align-items: center;
-}
-
-.contact-first-container h1 {
-  margin-top: 30px;
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  font-size: 2rem;
-}
-
-.contact-first-container p {
-  margin-top: 30px;
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
-  margin-left: 20px;
-  margin-right: 20px;
-  opacity: 0.7;
-  text-align: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .contact-second-container {
   display: flex;
-  flex-direction: column;
-  flex: 1;
-  color: #ffffff;
-  font-size: 2.5rem;
+  text-align: center;
   justify-content: center;
   align-items: center;
-}
-
-.contact-second-container h1 {
-  margin-top: 30px;
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  font-size: 2rem;
-}
-
-.contact-second-container p {
-  margin-top: 30px;
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
-  margin-left: 20px;
-  margin-right: 20px;
-  opacity: 0.7;
-  text-align: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .contact-third-container {
   display: flex;
-  flex-direction: column;
-  flex: 1;
-  color: #ffffff;
-  font-size: 2.5rem;
+  text-align: center;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.contact-third-container h1 {
-  margin-top: 30px;
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
+
+.contact-first-container i,
+.contact-second-container i,
+.contact-third-container i {
   font-size: 2rem;
 }
 
-.contact-third-container p {
-  margin-top: 30px;
-  font-family: "JetBrains Mono", "Poppins", Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
-  margin-left: 20px;
-  margin-right: 20px;
-  opacity: 0.7;
-  text-align: center;
+/* ------------------------------
+   RESPONSIVE BREAKPOINTS
+--------------------------------*/
+
+/* Medium devices */
+@media (max-width: 900px) {
+  .hero-left-div h1 {
+    font-size: 2.5rem;
+  }
+  .hero-left-div h2 {
+    font-size: 1.2rem;
+  }
+  .hero-left-div h3 {
+    font-size: 1rem;
+  }
+  .hero-right-div img {
+    max-width: 300px;
+  }
+}
+
+/* Small devices */
+@media (max-width: 600px) {
+  .nav-bar {
+    padding: 10px 15px;
+  }
+
+  .navigation-links {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .hero-main-div {
+    flex-direction: column;
+  }
+
+  .hero-left-div,
+  .hero-right-div {
+    text-align: center;
+  }
+
+  .hero-left-div h1 {
+    font-size: 2rem;
+  }
+
+  .hero-left-div h2,
+  .hero-left-div h3 {
+    font-size: 1rem;
+  }
+
+  .hero-right-div img {
+    max-width: 200px;
+  }
+
+  .hero-manga-button-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-manga-button-container button {
+    width: 100%;
+  }
 }

@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .then(res => res.text())
             .then(data => {
-                alert(data); // show message from PHP
+                // alert(data); // show message from PHP
             })
             .catch(err => {
                 console.error(err);
@@ -62,3 +62,38 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".add-to-cart");
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const card = btn.closest(".card");
+            const title = card.querySelector("h3").textContent;
+
+            // This is where you would normally send AJAX to add to cart
+            // Example: addToCart(productId);
+
+            showToast(`✔ Added <b>${title}</b> to cart`);
+        });
+    });
+});
+
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.innerHTML = message;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2500);
+}
+
+  const menuBtn = document.querySelector(".menu-btn");
+  const mobileNav = document.querySelector("#mobileNav");
+
+  if (menuBtn) {
+    menuBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("show");
+    });
+  }

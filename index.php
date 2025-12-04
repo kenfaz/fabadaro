@@ -30,13 +30,24 @@ include("database.php");
   <!-- Navbar -->
   <div class="nav-container">
     <nav class="nav-bar">
-      <div class="navigation-links">
+
+      <div class="mobile-nav" id="mobileNav">
         <a href="index.php#hero-section">Home</a>
-        <a href="catalog.php">Store</a>
+        <a href="catalog.html">Store</a>
         <a href="index.php#founders-section">Founders</a>
         <a href="index.php#about-section">About</a>
         <a href="index.php#contact-section">Contact Us</a>
       </div>
+
+      <i class="fa-solid fa-bars menu-btn"></i>
+      <div class="navigation-links">
+        <a href="index.php#hero-section">Home</a>
+        <a href="catalog.html">Store</a>
+        <a href="index.php#founders-section">Founders</a>
+        <a href="index.php#about-section">About</a>
+        <a href="index.php#contact-section">Contact Us</a>
+      </div>
+
       <div class="user-links">
         <div class="user-div">
           <a href="transaction.php"> <i class="fa-solid fa-user"></i></a>
@@ -49,6 +60,7 @@ include("database.php");
       </div>
     </nav>
   </div>
+  <!-- END OF NAVIGATION BAR -->
 
   <!-- Hero section -->
   <section id="hero-section">
@@ -212,23 +224,11 @@ include("database.php");
         <div class="about-left-div-header">
           <h1>ABOUT US</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
-            maxime, sunt alias eaque quo ea numquam sed animi eligendi ut est
-            iusto sit molestiae unde ullam tenetur exercitationem. Accusamus,
-            nam?
+            Welcome to Fabadaro, the ultimate haven for manga lovers! Our website is dedicated to bringing you the latest, rarest, and most beloved manga titles from around the world. Whether you’re a seasoned collector or just starting your manga journey, Fabadaro is your one-stop shop for all things manga.
+
+            We believe in connecting fans with stories that inspire, excite, and transport them to new worlds. Our mission is to make manga accessible, enjoyable, and a part of your everyday life. At Fabadaro, every page tells a story—and every story matters.
           </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
-            maxime, sunt alias eaque quo ea numquam sed animi eligendi ut est
-            iusto sit molestiae unde ullam tenetur exercitationem. Accusamus,
-            nam?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
-            maxime, sunt alias eaque quo ea numquam sed animi eligendi ut est
-            iusto sit molestiae unde ullam tenetur exercitationem. Accusamus,
-            nam?
-          </p>
+
         </div>
       </div>
       <div class="about-right-div"></div>
@@ -243,10 +243,7 @@ include("database.php");
           <h3>.......</h3>
           <div class="contact-header-div-description">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Exercitationem, ratione soluta accusantium dolore iusto
-              perferendis fugiat delectus officia odio incidunt porro a fugit
-              optio laborum, deserunt neque, corrupti saepe aperiam!
+              We’d love to hear from you! At Fabadaro, your questions, suggestions, and feedback are important to us. Whether you need help with an order, want to inquire about a manga, or just want to share your thoughts, our team is here to assist you.
             </p>
           </div>
         </div>
@@ -256,10 +253,7 @@ include("database.php");
           <i class="fa-solid fa-house"></i>
           <h1>Visit Us</h1>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum
-            quas incidunt, assumenda unde quaerat, autem iusto placeat impedit
-            deserunt, ipsam perferendis doloribus quibusdam. Quo cumque
-            reiciendis quod, perspiciatis iste in?
+            Come explore the world of manga at Fabadaro! Whether online or in person, we welcome all manga enthusiasts to discover our collection, find rare gems, and immerse themselves in captivating stories.
           </p>
           <p>Calamba City, Laguna, Philippines</p>
         </div>
@@ -267,10 +261,7 @@ include("database.php");
           <i class="fa-solid fa-phone"></i>
           <h1>Call Us</h1>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum
-            quas incidunt, assumenda unde quaerat, autem iusto placeat impedit
-            deserunt, ipsam perferendis doloribus quibusdam. Quo cumque
-            reiciendis quod, perspiciatis iste in?
+            Have questions or need assistance? Our friendly team at Fabadaro is just a phone call away! Whether it’s about an order, a manga recommendation, or any inquiry, we’re here to provide quick and helpful support.
           </p>
           <p>(+63) 939 727 1618</p>
         </div>
@@ -278,16 +269,14 @@ include("database.php");
           <i class="fa-solid fa-envelope"></i>
           <h1>Contact Us</h1>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum
-            quas incidunt, assumenda unde quaerat, autem iusto placeat impedit
-            deserunt, ipsam perferendis doloribus quibusdam. Quo cumque
-            reiciendis quod, perspiciatis iste in?
+            Prefer to write to us? At Fabadaro, we’re always ready to hear from you via email. Whether it’s a question about our manga collection, a suggestion, or feedback, your message matters to us.
           </p>
           <p>fabadaro@gmail.com</p>
         </div>
       </div>
     </div>
   </section>
+  <script src="scripts/index.js"></script>
 </body>
 <footer></footer>
 

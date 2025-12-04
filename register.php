@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <button class="sign-in" type="submit">Create Account</button>
 
-            <p>Already have an account? 
+            <p class="login-link-text">Already have an account? 
               <a class="login-link" href="login.php">Log In</a>
             </p>
           </form>

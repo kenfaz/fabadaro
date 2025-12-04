@@ -2,42 +2,65 @@
     margin: 0;
     padding: 0;
     font-family: 'JetBrains Mono', 'Poppins', Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
+/* MAIN BACKGROUND */
 .main-div {
     display: flex;
     width: 100vw;
     height: 100vh;
     justify-content: center;
-    text-align: center;
     align-items: center;
-    background-image: url("src/images/login_background.jpg");
+    background-image: url("../src/images/login_background.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
 }
 
+/* FLOATING ANIMATION */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* MAIN CONTAINER */
 .form-container {
     display: flex;
     width: 70%;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.403);
+    height: 90vh;
+    border-radius: 25px;
+    overflow: hidden;
+    animation: float 6s ease-in-out infinite;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+.form-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.55);
+}
+
+/* LEFT SIDE */
 .left-div {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    height: 90vh;
-    flex: 1;
     justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
+    align-items: flex-start;
 }
 
+/* RIGHT SIDE IMAGE */
 .right-div {
-    height: 90vh;
     flex: 1;
+    height: 100%;
 }
 
 .right-div img {
@@ -45,86 +68,121 @@
     height: 100%;
     object-fit: cover;
     object-position: top;
+    opacity: 0;
+    transform: scale(1.1);
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
+    animation: fadeImg 1.5s ease forwards;
 }
 
-/* LOGIN FORM */
+@keyframes fadeImg {
+    0% { opacity: 0; transform: scale(1.1); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* LOGIN BOX */
 .login-box {
-    width: 80%;
+    width: 100%;
+    animation: slideFade 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideFade {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 .login-box h2 {
-    font-size: 2rem;
-    margin-top: 20px;
-    /* margin-bottom: 20px; */
+    font-size: 2.4rem;
     color: #e4541e;
-    text-align: left;
+    margin-bottom: 10px;
 }
 
 .login-box h3 {
     font-size: 1rem;
-    text-align: left;
+    color: #000;
     margin-bottom: 20px;
-    color: #000000;
 }
 
 .login-box p {
-    margin-bottom: 10px;
     text-align: left;
+    margin-bottom: 10px;
 }
 
+/* INPUT FIELDS */
 .login-box input {
     width: 100%;
-    margin-bottom: 20px;
     height: 50px;
-    border-radius: 5px;
-    padding-left: 25px;
-    font-size: 1.2rem;
-    box-sizing: border-box;
+    padding-left: 20px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 2px solid transparent;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
 }
 
-.login-box input:active {
-    border: 2px solid green;
+.login-box input:focus {
+    border-color: #e4541e;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(228, 84, 30, 0.45);
+    transform: scale(1.02);
 }
 
+/* SIGN IN BUTTON */
 .sign-in {
     width: 100%;
     height: 50px;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: #e4541e;
-    font-weight: bolder;
-    font-size: 1.5rem;
-    color: #ffffff;
+    font-size: 1.4rem;
+    color: white;
+    font-weight: bold;
     border: none;
-    margin-bottom: 20px;
+    transition: all 0.3s ease;
 }
 
 .sign-in:hover {
-    background-color: white;
+    background-color: #fff;
     color: #e4541e;
     border: 2px solid #e4541e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(228, 84, 30, 0.4);
 }
 
-
+/* SIGN UP BUTTON */
 .sign-up {
     width: 100%;
     height: 50px;
-    border-radius: 5px;
-    background-color: #ffffff;
-    font-weight: bolder;
-    font-size: 1.5rem;
-    color: #e4541e;
+    border-radius: 8px;
+    background-color: #fff;
     border: 2px solid #e4541e;
-    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #e4541e;
+    transition: all 0.3s ease;
 }
 
 .sign-up:hover {
     background-color: #e4541e;
     color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(228, 84, 30, 0.4);
+}
+
+/* BOTTOM LINK */
+.login-link-text {
+    margin-top: 20px;
 }
 
 .login-link {
     text-decoration: underline;
     color: #e4541e;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.login-link:hover {
+    color: #000;
 }
