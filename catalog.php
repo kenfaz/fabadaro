@@ -8,7 +8,7 @@ include('database.php');
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <link rel="icon" href="src/icons/favicon.ico" />
   <link rel="stylesheet" href="css/catalog.css" />
   <link
     rel="stylesheet"
