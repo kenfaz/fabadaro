@@ -45,25 +45,40 @@ while ($row = $result->fetch_assoc()) {
 </head>
 <body>
 
-<div class="nav-container">
-  <nav class="nav-bar">
-    <div class="navigation-links">
-      <a href="index.php#hero-section">Home</a>
-      <a href="catalog.php">Store</a>
-      <a href="index.php#founders-section">Founders</a>
-      <a href="index.php#about-section">About</a>
-      <a href="index.php#contact-section">Contact Us</a>
-    </div>
-    <div class="user-links">
-      <div class="user-div">
-        <a href="transaction.php"><i class="fa-solid fa-user"></i></a>
-        <p>Kenken</p>
+ <!-- Navbar -->
+  <div class="nav-container">
+    <nav class="nav-bar">
+
+      <div class="mobile-nav" id="mobileNav">
+        <a href="index.php#hero-section">Home</a>
+        <a href="catalog.html">Store</a>
+        <a href="index.php#founders-section">Founders</a>
+        <a href="index.php#about-section">About</a>
+        <a href="index.php#contact-section">Contact Us</a>
       </div>
-      <a href="cart.php"><i class="fa-solid fa-basket-shopping"></i></a>
-      <a href="register.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
-    </div>
-  </nav>
-</div>
+
+      <div class="navigation-links">
+        <a href="index.php#hero-section">Home</a>
+        <a href="catalog.php">Store</a>
+        <a href="index.php#founders-section">Founders</a>
+        <a href="index.php#about-section">About</a>
+        <a href="index.php#contact-section">Contact Us</a>
+      </div>
+
+      <i class="fa-solid fa-bars menu-btn"></i>
+      <div class="user-links">
+        <div class="user-div">
+          <a href="transaction.php"> <i class="fa-solid fa-user"></i></a>
+          <a href="transaction.php">
+            <p>Kenken</p>
+          </a>
+        </div>
+        <a href="cart.php"><i class="fa-solid fa-basket-shopping"></i></a>
+        <a href="login.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+      </div>
+    </nav>
+  </div>
+  <!-- END OF NAVIGATION BAR -->
 
 <div class="main-div">
   <div class="cart-container">
@@ -104,6 +119,8 @@ while ($row = $result->fetch_assoc()) {
     <?php endif; ?>
   </div>
 </div>
+<div id="notification-container"></div>
+
 
 <script src="scripts/cart.js"></script>
 </body>

@@ -27,6 +27,7 @@ img {
 /* ------------------------------
    NAVIGATION
 --------------------------------*/
+/* Navigation */
 .nav-container {
   width: 100%;
   position: fixed;
@@ -34,35 +35,45 @@ img {
   z-index: 999;
 }
 
+/* Navbar main wrapper */
 .nav-bar {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 12px 30px;
+  justify-content: space-between;
   background-color: #14110d;
+  padding: 12px 30px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  flex-wrap: wrap;
 }
 
-.navigation-links {
-  display: flex;
-  gap: 35px;
-  flex: 1;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.navigation-links a {
+/* Links Default */
+.nav-bar a {
+  font-family: "JetBrains Mono", "Poppins", Arial, sans-serif;
   text-decoration: none;
   color: #e4541e;
   font-weight: bold;
   transition: 0.3s ease;
 }
 
-.navigation-links a:hover {
+.nav-bar a:hover {
   color: #ff7a42;
 }
 
+.menu-btn {
+  visibility: hidden;
+}
+
+/* Navigation links group */
+.navigation-links {
+  display: flex;
+  gap: 35px;
+  flex: 1;
+  justify-content: center;
+}
+
+
+
+/* User section right side */
 .user-links {
   display: flex;
   align-items: center;
@@ -72,7 +83,6 @@ img {
 .user-div {
   display: flex;
   align-items: center;
-  gap: 8px;
 }
 
 .user-links i {
@@ -86,30 +96,71 @@ img {
 }
 
 .user-links p {
+  padding-left: 8px;
   font-weight: bold;
   color: #e4541e;
 }
 
-/* Mobile Menu */
-.menu-btn {
-  display: none;
-  font-size: 25px;
-  cursor: pointer;
-  color: #e4541e;
+/* -----------------------------
+   RESPONSIVE BREAKPOINTS
+--------------------------------*/
+
+/* Medium screens (tablets) */
+@media (max-width: 900px) {
+  .navigation-links {
+    gap: 20px;
+  }
 }
 
+/* Mobile responsiveness */
+@media (max-width: 700px) {
+  .nav-bar {
+    padding: 12px 20px;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  /* Hide navigation links on mobile */
+  .navigation-links {
+    display: none;
+  }
+
+  /* .user-links {
+    flex-direction: column;
+  } */
+
+  /* Show hamburger */
+  .menu-btn {
+    display: block;
+    visibility: visible;
+    cursor: pointer;
+    font-size: 25px !important;
+    color: #e4541e;
+  }
+}
+
+/* Mobile menu dropdown */
 .mobile-nav {
   display: none;
   flex-direction: column;
-  background-color: #14110d;
-  gap: 20px;
+  background: #14110d;
   padding: 20px;
+  gap: 20px;
   text-align: center;
+}
+
+.mobile-nav a {
+  color: #e4541e;
+  font-size: 18px;
 }
 
 .mobile-nav.show {
   display: flex;
 }
+
+/* END OF NAVIGATION */
 
 /* ------------------------------
    HERO SECTION
@@ -334,7 +385,6 @@ img {
   gap: 20px;
 }
 
-
 /* ------------------------------
    ABOUT SECTION
 --------------------------------*/
@@ -436,7 +486,6 @@ img {
   flex-direction: column;
   gap: 10px;
 }
-
 
 .contact-first-container i,
 .contact-second-container i,

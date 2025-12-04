@@ -58,11 +58,46 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then(res => res.text())
         .then(data => {
-            alert(data);
+            // alert(data);
             if (data.includes("success")) {
                 window.location.href = "transaction.php";
             }
         })
         .catch(err => console.error(err));
     });
+});
+
+// Notification function
+function showNotification(message, type = "success") {
+    const container = document.getElementById("notification-container");
+
+    const notification = document.createElement("div");
+    notification.classList.add("notification", type);
+    notification.textContent = message;
+
+    container.appendChild(notification);
+
+    // Remove after 3 seconds
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
+
+// Example: Remove item
+function removeItem(cartId) {
+    // Your AJAX / fetch call to remove the item from database
+    // For demo, let's just remove the element from DOM
+    const item = document.querySelector(`.cart-item[data-cart-id='${cartId}']`);
+    if (item) {
+        item.remove();
+        showNotification("Item removed from cart", "error");
+        // Optionally update subtotal here
+    }
+}
+
+// Checkout button
+const checkoutBtn = document.querySelector(".checkout-btn");
+checkoutBtn.addEventListener("click", function() {
+    // Your checkout logic here
+    showNotification("Checkout successful!", "success");
 });

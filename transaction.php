@@ -37,31 +37,47 @@ $result = $conn->query($sql);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Transaction History</title>
+    <link rel="icon" href="src/icons/favicon.ico"/>
     <link rel="stylesheet" href="css/transaction.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-<div class="nav-container">
-  <nav class="nav-bar">
-    <div class="navigation-links">
-      <a href="index.php#hero-section">Home</a>
-      <a href="catalog.php">Store</a>
-      <a href="index.php#founders-section">Founders</a>
-      <a href="index.php#about-section">About</a>
-      <a href="index.php#contact-section">Contact Us</a>
-    </div>
-    <div class="user-links">
-      <div class="user-div">
-        <a href="transaction.php"><i class="fa-solid fa-user"></i></a>
-        <p>Kenken</p>
+ <!-- Navbar -->
+  <div class="nav-container">
+    <nav class="nav-bar">
+
+      <div class="mobile-nav" id="mobileNav">
+        <a href="index.php#hero-section">Home</a>
+        <a href="catalog.html">Store</a>
+        <a href="index.php#founders-section">Founders</a>
+        <a href="index.php#about-section">About</a>
+        <a href="index.php#contact-section">Contact Us</a>
       </div>
-      <a href="cart.php"><i class="fa-solid fa-basket-shopping"></i></a>
-      <a href="login.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
-    </div>
-  </nav>
-</div>
+
+      <div class="navigation-links">
+        <a href="index.php#hero-section">Home</a>
+        <a href="catalog.php">Store</a>
+        <a href="index.php#founders-section">Founders</a>
+        <a href="index.php#about-section">About</a>
+        <a href="index.php#contact-section">Contact Us</a>
+      </div>
+
+      <i class="fa-solid fa-bars menu-btn"></i>
+      <div class="user-links">
+        <div class="user-div">
+          <a href="transaction.php"> <i class="fa-solid fa-user"></i></a>
+          <a href="transaction.php">
+            <p>Kenken</p>
+          </a>
+        </div>
+        <a href="cart.php"><i class="fa-solid fa-basket-shopping"></i></a>
+        <a href="login.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+      </div>
+    </nav>
+  </div>
+  <!-- END OF NAVIGATION BAR -->
 
 <div class="main-div">
     <div class="container">

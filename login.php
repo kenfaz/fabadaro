@@ -39,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/login.css" />
+    <link rel="icon" href="src/icons/favicon.ico" />
     <title>Fabadaro - Login</title>
   </head>
   <body>

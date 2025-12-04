@@ -12,6 +12,7 @@ include("database.php");
     content="width=device-width, initial-scale=1.0" />
   <title>Welcome | Fabadaro</title>
   <link rel="stylesheet" href="css/index.css" />
+  <link rel="icon" href="src/icons/favicon.ico">
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -39,15 +40,15 @@ include("database.php");
         <a href="index.php#contact-section">Contact Us</a>
       </div>
 
-      <i class="fa-solid fa-bars menu-btn"></i>
       <div class="navigation-links">
         <a href="index.php#hero-section">Home</a>
-        <a href="catalog.html">Store</a>
+        <a href="catalog.php">Store</a>
         <a href="index.php#founders-section">Founders</a>
         <a href="index.php#about-section">About</a>
         <a href="index.php#contact-section">Contact Us</a>
       </div>
 
+      <i class="fa-solid fa-bars menu-btn"></i>
       <div class="user-links">
         <div class="user-div">
           <a href="transaction.php"> <i class="fa-solid fa-user"></i></a>
